@@ -28,12 +28,12 @@ wineboot -u
 
 # install dependencies
 print "Installing dependencies..."
-winetricks -q dotnet20 mfc42 d3dcompiler_43 d3dx9 vcrun2005
+winetricks -q dotnet20 mfc42 d3dx9 vcrun2005 vcrun2010
 
 # check if vulkan is installed and install d9vk
 if [ -f "/usr/lib/libvulkan.so" ]; then
     print "Installing vulkan support for improved performance..."
-    winetricks -q d9vk020
+    winetricks -q d3dcompiler_43 d9vk020
 fi
 
 # set video memory size in wine
