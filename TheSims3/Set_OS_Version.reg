@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Wine\AppDefaults\Sims3LauncherW.exe]
+"Version"="winxp"
+
+[HKEY_CURRENT_USER\Software\Wine]
+"Version"="win7"
