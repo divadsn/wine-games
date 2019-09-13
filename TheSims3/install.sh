@@ -38,17 +38,23 @@ fi
 
 # set video memory size in wine
 if [ -f "/var/log/Xorg.0.log" ]; then
-    VRAM=$(($(grep -P -o -i "(?<=memory:).*(?=kbytes)" /var/log/Xorg.0.log) / 1024))
-    print "Setting video memory to $VRAM MB..."
-    winetricks settings videomemorysize=$VRAM
+    DISPLAY_VRAM=$(($(grep -P -o -i "(?<=memory:).*(?=kbytes)" /var/log/Xorg.0.log) / 1024))
+    print "Setting video memory to $DISPLAY_VRAM MB..."
+    winetricks settings videomemorysize=$DISPLAY_VRAM
 else
     print "Could not read video memory size from GPU, setting to default..."
     winetricks settings videomemorysize=default
 fi
 
 # enable virtual desktop
-print "Enabling wine virtual desktop..."
-winetricks settings vd=1280x1024
+if [ -f "/usr/bin/xrandr" ]; then
+    DISPLAY_SIZE=$(xrandr --current | grep  '*' | uniq | awk '{print $1}')
+    print "Enabling wine virtual desktop at $DISPLAY_SIZE..."
+    winetricks settings vd=$DISPLAY_SIZE
+else
+    print "Could not read display size from GPU, setting to 1024x768..."
+    winetricks settings vd=1024x768
+fi
 
 # force cursor clipping for full-screen windows
 print "Forcing cursor clipping for full-screen windows..."
