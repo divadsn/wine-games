@@ -4,7 +4,8 @@ export WINEPREFIX=~/.local/share/wineprefixes/TheSims3
 export WINEARCH=win32
 
 cd $WINEPREFIX
+echo "Searching for Sims3LauncherW.exe inside wineprefix..."
+LAUNCHER=$(find ./drive_c -name "Sims3LauncherW.exe" -print -quit)
 
-LAUNCHER=$(find $(pwd)/drive_c -name "Sims3LauncherW.exe" -print -quit)
-echo "Starting using $LAUNCHER..."
-DXVK_HUD=1 wine "$LAUNCHER"
+echo "Found: $LAUNCHER"
+DXVK_HUD=fps wine "$LAUNCHER"
