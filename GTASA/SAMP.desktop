@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=San Andreas Multiplayer
+Comment=Start San Andreas Multiplayer
+Exec=$HOME/.local/share/wineprefixes/GTASA/runscript.sh samp.exe
+Icon=SAMP
+Terminal=false
+Type=Application
+Categories=Game;
+StartupNotify=true
+StartupWMClass=samp.exe
