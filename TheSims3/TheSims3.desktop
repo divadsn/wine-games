@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=The Sims 3
 Comment=Start The Sims 3 Launcher
-Exec=.local/share/wineprefixes/TheSims3/runscript.sh
+Exec=$HOME/.local/share/wineprefixes/TheSims3/runscript.sh
 Icon=TheSims3
 Terminal=false
 Type=Application

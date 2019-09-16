@@ -76,16 +76,19 @@ wineboot -r
 
 cp runscript.sh $WINEPREFIX
 
-# set OS version to Windows XP for Sims3LauncherW...
+# set OS version to Windows XP for Sims3LauncherW
 print "Setting version to XP for Sims3LauncherW..."
 wine regedit Set_OS_Version.reg
 
 # install desktop shortcut
 print "Installing desktop shortcut..."
 mkdir -p ~/.local/share/icons
-mkdir -p ~/.local/share/applications
-cp TheSims3.png ~/.local/share/icons
-cp TheSims3.desktop ~/.local/share/applications
+mkdir -p ~/.local/share/applications/games
+cp -f TheSims3.png ~/.local/share/icons
+cp -f TheSims3.desktop ~/.local/share/applications/games
+
+# fix home directory in desktop shortcut
+sed -i 's:$HOME:'"$HOME"':g' ~/.local/share/applications/games/TheSims3.desktop
 
 # update desktop database
 print "Updating desktop database..."
