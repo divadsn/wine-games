@@ -6,3 +6,5 @@ Icon=TheSims3
 Terminal=false
 Type=Application
 Categories=Game;
+StartupNotify=true
+StartupWMClass=Sims3LauncherW.exe
