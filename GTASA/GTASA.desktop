@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Grand Theft Auto: San Andreas
+Comment=Start Grand Theft Auto: San Andreas
+Exec=$HOME/.local/share/wineprefixes/GTASA/runscript.sh gta_sa.exe
+Icon=GTASA
+Terminal=false
+Type=Application
+Categories=Game;
+StartupNotify=true
+StartupWMClass=gta_sa.exe
