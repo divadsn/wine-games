@@ -9,11 +9,11 @@ if [ -z "$1" ]; then
 fi
 
 cd $WINEPREFIX
-echo "Searching for $1 inside wineprefix..."
+echo "Searching for $@ inside wineprefix..."
 
 LAUNCHER=$(find ./drive_c -name $1 -print -quit)
 BASEDIR=$(dirname "$LAUNCHER")
 echo "Found: $BASEDIR"
 
 cd "$BASEDIR"
-DXVK_HUD=fps wine $1
+DXVK_HUD=fps wine "$@"

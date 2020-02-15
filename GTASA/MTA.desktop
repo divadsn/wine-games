@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Multi Theft Auto
+Comment=Start MTA
+Exec=$HOME/.local/share/wineprefixes/GTASA/runscript.sh Multi Theft Auto.exe
+Icon=MTA
+Terminal=false
+Type=Application
+Categories=Game;
+StartupNotify=true
+StartupWMClass=Multi Theft Auto.exe
